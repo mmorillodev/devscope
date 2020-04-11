@@ -1,4 +1,10 @@
-mat-toolbar {
-    background-color: #1c1d1f;
+mat-toolbar, mat-toolbar-row {
+    background-color: #3c3f44;
     color: white;
 }
+
+.fill-space {
+     /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }

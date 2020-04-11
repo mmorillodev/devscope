@@ -1,3 +1,17 @@
 <mat-toolbar>
-    DevScope    
+    <mat-toolbar-row>
+        <span>DevScope</span>   
+        <span class="fill-space"></span>     
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">              
+            <mat-icon>apps</mat-icon>
+        </button>
+        <i class="fas fa-th"></i>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>info</mat-icon>              
+                <span>Quem somos ?</span>
+            </button>          
+          </mat-menu>
+    </mat-toolbar-row>      
 </mat-toolbar>
+<router-outlet></router-outlet>
