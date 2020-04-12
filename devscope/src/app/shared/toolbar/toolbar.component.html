@@ -4,8 +4,19 @@
         <span class="fill-space"></span> 
         <input class="search-input" placeholder="Search...">
         <span class="fill-space"></span>
-        <span class="acct-icon"></span>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">              
+        <button mat-icon-button [matMenuTriggerFor]="account" aria-label="Icon-button with a menu">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <i class="fas fa-th"></i>
+        <mat-menu #account="matMenu">
+            <button mat-menu-item [routerLink]="">
+                <span>Login</span>
+            </button>
+            <button mat-menu-item [routerLink]="">
+                <span>Registre-se</span>
+            </button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon-button with a menu">              
             <mat-icon>apps</mat-icon>
         </button>
         <i class="fas fa-th"></i>
