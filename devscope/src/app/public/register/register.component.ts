@@ -8,9 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-    constructor(
-        private formBuilder: FormBuilder,
-        public registerForm: FormGroup) {}
+    registerForm: FormGroup;
+
+    constructor(private formBuilder: FormBuilder) {}
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -21,8 +21,8 @@ export class RegisterComponent implements OnInit {
             }),
             password: ['', [Validators.required]],
             birthDate: ['', [Validators.required]],
-            tellphone: ['', [Validators.required]],
-            cellphone: ['', [Validators.required]],
+            telephone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+            cellphone: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
             address: ['', [Validators.required]]
         });
     }

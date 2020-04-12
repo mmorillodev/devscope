@@ -1,24 +1,188 @@
-<p>fafs</p>
-
 <div class="card-body">
-    <form novalidate (ngSubmit)="register()" [formGroup]="registerForm">
+  <form novalidate (ngSubmit)="register()" [formGroup]="registerForm">
 
-        <div class="form-group row mb-2">
-            <label class="col-md-2 col-form-label" for="fullNameId">First Name</label>
-            <div class="col-md-8">
-              <input class="form-control" id="fullNameId" type="text" placeholder="First Name (required)"
-                formControlName="fullName"
-                [ngClass]="{'is-invalid': (registerForm.get('fullName').touched || registerForm.get('fullName').dirty) && !registerForm.get('fullName').valid }" />
-              <span class="invalid-feedback">
-                <span *ngIf="registerForm.get('fullName').errors?.required">
-                  Favor digitar seu nome completo.
-                </span>
-                <span *ngIf="registerForm.get('fullName').errors?.minlength">
-                  The first name must be longer than 3 characters.
-                </span>
-              </span>
-            </div>
-          </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="fullNameId">Nome Completo</label>
+      <div class="col-md-8">
+        <input class="form-control" 
+               id="fullNameId" 
+               type="text" 
+               placeholder="Nome completo (obrigatório)"
+               formControlName="fullName"
+               [ngClass]="{'is-invalid': (registerForm.get('fullName').touched || registerForm.get('fullName').dirty) && !registerForm.get('fullName').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('fullName').errors?.required">
+            Favor digitar o seu nome completo.
+          </span>
+          <span *ngIf="registerForm.get('fullName').errors?.minlength">
+            O seu nome deve ter no mínimo 3 caracteres.
+          </span>
+          <span *ngIf="registerForm.get('fullName').errors?.maxlength">
+            O seu nome deve ter no máximo 200 caracteres.
+          </span>
+        </span>
+      </div>
+    </div>
 
-    </form>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="birthDateId">Data de Nascimento</label>
+      <div class="col-md-8">
+        <input class="form-control" 
+               id="birthDateId" 
+               type="date" 
+               placeholder="Data de nascimento (obrigatório)"
+               formControlName="birthDate"
+               [ngClass]="{'is-invalid': (registerForm.get('birthDate').touched || registerForm.get('birthDate').dirty) && !registerForm.get('birthDate').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('birthDate').errors?.required">
+            Favor inserir a sua data de nascimento.
+          </span>         
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="telephoneId">Telefone</label>
+      <div class="col-md-8">
+        <input class="form-control" 
+               id="telephoneId" 
+               type="text" 
+               placeholder="Telefone (obrigatório)"
+               formControlName="telephone"
+               [ngClass]="{'is-invalid': (registerForm.get('telephone').touched || registerForm.get('telephone').dirty) && !registerForm.get('telephone').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('telephone').errors?.required">
+            Favor digitar o seu número de telefone.
+          </span>
+          <span *ngIf="registerForm.get('telephone').errors?.minlength">
+            Favor digitar um telefone válido.
+          </span>
+          <span *ngIf="registerForm.get('telephone').errors?.maxlength">
+            Favor digitar um telefone válido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="cellphoneId">Celular</label>
+      <div class="col-md-8">
+        <input class="form-control" 
+               id="cellphoneId" 
+               type="text" 
+               placeholder="Celular (obrigatório)"
+               formControlName="cellphone"
+               [ngClass]="{'is-invalid': (registerForm.get('cellphone').touched || registerForm.get('cellphone').dirty) && !registerForm.get('cellphone').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('cellphone').errors?.required">
+            Favor digitar o seu número de celular.
+          </span>
+          <span *ngIf="registerForm.get('cellphone').errors?.minlength">
+            Favor digitar um celular válido.
+          </span>
+          <span *ngIf="registerForm.get('cellphone').errors?.maxlength">
+            Favor digitar um celular válido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="addressId">Endreceço</label>
+      <div class="col-md-8">
+        <input class="form-control" 
+               id="addressId" 
+               type="text" 
+               placeholder="Endereço (obrigatório)"
+               formControlName="address"
+               [ngClass]="{'is-invalid': (registerForm.get('address').touched || registerForm.get('address').dirty) && !registerForm.get('address').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('address').errors?.required">
+            Favor digitar o seu endereço.
+          </span>          
+        </span>
+      </div>
+    </div>
+
+    <div formGroupName="emailGroup">
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="emailId">Email</label>
+        <div class="col-md-8">
+          <input class="form-control" 
+                 id="emailId" 
+                 type="text" 
+                 placeholder="Email (obrigatório)" 
+                 formControlName="email"
+                 [ngClass]="{'is-invalid': (registerForm.get('emailGroup.email').touched || registerForm.get('emailGroup.email').dirty) && !registerForm.get('emailGroup.email').valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="registerForm.get('emailGroup.email').errors?.required">
+              Favor digitar o seu email.
+            </span>
+            <span *ngIf="registerForm.get('emailGroup.email').errors?.valid">
+              Favor digitar um endereço de email válido.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="emailId">Confirmação de Email</label>
+        <div class="col-md-8">
+          <input class="form-control" 
+                 id="confirmEmailId" 
+                 type="text" 
+                 placeholder="Confirmação de email (obrigatório)"
+                 formControlName="confirmEmail"
+                 [ngClass]="{'is-invalid': (registerForm.get('emailGroup.confirmEmail').touched || 
+                                            registerForm.get('emailGroup.confirmEmail').dirty) &&
+                                            !registerForm.get('emailGroup.confirmEmail').valid &&
+                                            registerForm.get('emailGroup.confirmEmail').value !== registerForm.get('emailGroup.email')}" />
+          <span class="invalid-feedback">
+            <span *ngIf="registerForm.get('emailGroup.confirmEmail').errors?.required">
+              Favor digitar o seu email.
+            </span>
+            <span *ngIf="registerForm.get('emailGroup.confirmEmail').errors?.email">
+              Favor confirme o seu email.
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="passwordId">Senha</label>
+      <div class="col-md-8">
+        <input class="form-control" 
+               id="passwordId" 
+               type="password" 
+               placeholder="Senha (obrigatório)"
+               formControlName="password"
+               [ngClass]="{'is-invalid': (registerForm.get('password').touched || registerForm.get('password').dirty) && !registerForm.get('password').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('password').errors?.required">
+            Favor digitar a sua senha.
+          </span>         
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <div class="offset-md-2 col-md-8">
+        <button class="btn btn-primary ml-1" type="submit"
+        [title]="registerForm.valid ? 'Salve o seu cadastro!' : 'Desabilitado até que os dados sejam válidos'"
+        [disabled]="!registerForm.valid">
+        Salvar
+      </button>
+      <button class="btn btn-danger mr-1">
+        Cancelar
+      </button>
+      </div>
+    </div>
+  </form>
 </div>
+
+<br>Dirty: {{ registerForm.dirty }}
+<br>Touched: {{ registerForm.touched }}
+<br>Valid: {{ registerForm.valid }}
+<br>Value: {{ registerForm.value | json }}
+<br>password: {{registerForm.get('password').value}}
