@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PublicModule } from './public/public.module';
+import { SharedModule } from './shared/shared.module';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     PublicModule,
+    SharedModule,
     MatToolbarModule,
     MatButtonModule,
     MatMenuModule,
@@ -36,6 +38,6 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
     FontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent, ToolbarComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

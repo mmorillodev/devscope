@@ -6,4 +6,4 @@ import { ToolbarModule } from './toolbar/toolbar.module';
         ToolbarModule
     ]
 })
-export class PublicModule {}
+export class SharedModule {}
