@@ -1,9 +1,10 @@
 <mat-toolbar>
     <mat-toolbar-row>
-        <span>DevScope</span>  
+        <span class="app-title">DevScope</span>  
         <span class="fill-space"></span> 
         <input class="search-input" placeholder="Search...">
         <span class="fill-space"></span>
+        <span class="acct-icon"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">              
             <mat-icon>apps</mat-icon>
         </button>
@@ -13,7 +14,7 @@
                 <mat-icon>info</mat-icon>              
                 <span>Quem somos ?</span>
             </button>          
-          </mat-menu>
+        </mat-menu>
     </mat-toolbar-row>      
 </mat-toolbar>
 <router-outlet></router-outlet>
