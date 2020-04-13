@@ -1,0 +1,45 @@
+<div class="card-body">
+  <form novalidate (ngSubmit)="login()" [formGroup]="registerForm">
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="emailId">Email*</label>
+      <div class="col-md-8">
+        <input class="form-control" id="emailId" type="text" formControlName="email"
+          [ngClass]="{'is-invalid': (registerForm.get('emailGroup.email').touched || registerForm.get('emailGroup.email').dirty) && !registerForm.get('emailGroup.email').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('emailGroup.email').errors?.required">
+            Favor digitar o seu email.
+          </span>
+          <span *ngIf="registerForm.get('emailGroup.email').errors?.valid">
+            Favor digitar um endereço de email válido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="passwordId">Senha*</label>
+      <div class="col-md-8">
+        <input class="form-control" id="passwordId" type="password"
+          formControlName="password"
+          [ngClass]="{'is-invalid': (registerForm.get('password').touched || registerForm.get('password').dirty) && !registerForm.get('password').valid }" />
+        <span class="invalid-feedback">
+          <span *ngIf="registerForm.get('password').errors?.required">
+            Favor digitar a sua senha.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row mb-2">
+      <div class="offset-md-2 col-md-8">
+        <button class="btn btn-primary ml-1" type="submit"
+          [title]="registerForm.valid ? 'Salve o seu cadastro!' : 'Desabilitado até que os dados sejam válidos'"
+          [disabled]="!registerForm.valid">
+          Login
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+password: {{registerForm.get('password').value}}

@@ -9,10 +9,10 @@
         </button>
         <i class="fas fa-th"></i>
         <mat-menu #account="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item [routerLink]="['login']">
                 <span>Login</span>
             </button>
-            <button mat-menu-item [routerLink]="['devscope/register/new']">
+            <button mat-menu-item [routerLink]="['register/new']">
                 <span>Registre-se</span>
             </button>
         </mat-menu>
