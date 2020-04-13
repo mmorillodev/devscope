@@ -1,0 +1,10 @@
+main-card {
+    position: absolute;
+    height: 50vh;
+    width: 50vw;
+    background: #1C1D1F;
+    border-radius: .25rem;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
