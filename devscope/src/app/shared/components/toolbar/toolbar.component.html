@@ -3,7 +3,7 @@
     <span class="app-title">DevScope</span>
     <input class="search-input" placeholder="Search...">
     <div class="btn-wrapper">
-      <button class="btn-acct-manager btn-login">Entrar</button>
+      <button class="btn-acct-manager btn-login" [routerLink]="['login']">Entrar</button>
       <button class="btn-acct-manager btn-signup" [routerLink]="['register/new']">Inscreva-se</button>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Apps">
         <mat-icon>apps</mat-icon>
