@@ -23,10 +23,10 @@ mat-toolbar, mat-toolbar-row {
     background: #181C28 url('../../../../assets/icons/search-24px.svg') no-repeat 1% 50%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: .25rem;
-    font-size: medium;
+    font-size: small;
     color: #fff;
     width: 35vw;
-    height: 4vh;
+    height: 60%;
     padding: 5px 5px 5px 35px;
     border: 0;
 }
@@ -49,12 +49,12 @@ mat-toolbar, mat-toolbar-row {
 .btn-login {
   background: #53A788;
   margin-right: 5px;
-  width: 4vw;
+  width: 100px;
 }
 
 .btn-signup {
   background: #5ea873;
-  width: 6vw;
+  width: 120px;
 }
 
 .search-input::placeholder {
