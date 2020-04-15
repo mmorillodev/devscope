@@ -1,28 +1,60 @@
 mat-toolbar, mat-toolbar-row {
-    background-color: #1C1D1F;
-    border-bottom: 1px solid #3C3F44;
-    justify-content: space-between;
+    background-color: #0C0D14;
+    border-bottom: 1px solid #181C28;
+    justify-content: space-around;
     color: white;
+}
+
+.mat-icon {
+  font-size: 35px;
 }
 
 .fill-space {
      /* This fills the remaining space, by using flexbox.
      Every toolbar row uses a flexbox row layout. */
     flex: 1 1 auto;
-  }
+}
+
+.app-title {
+    /*margin-left: 15vw;*/
+}
 
 .search-input {
-    background: #3C3F44 url('../../../../assets/icons/search-24px.svg') left no-repeat;
-    background-position: 1% 50%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #181C28 url('../../../../assets/icons/search-24px.svg') no-repeat 1% 50%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: .25rem;
-    font-size: medium;
+    font-size: small;
     color: #fff;
     width: 35vw;
-    height: 5vh;
-    padding: 5px;
-    padding-left:35px;
+    height: 60%;
+    padding: 5px 5px 5px 35px;
     border: 0;
+}
+
+.btn-wrapper {
+  width: 12vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) .5fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-acct-manager {
+  border-radius: 1.25rem;
+  font-size: medium;
+  border: none;
+  color: white;
+}
+
+.btn-login {
+  background: #53A788;
+  margin-right: 5px;
+  width: 100px;
+}
+
+.btn-signup {
+  background: #5ea873;
+  width: 120px;
 }
 
 .search-input::placeholder {
