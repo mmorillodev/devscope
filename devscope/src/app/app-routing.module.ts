@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from 'src/app/public/register/register.component';
 
 const routes: Routes = [{
-  path: 'devscope/register/new',
+  path: 'register/new',
   component: RegisterComponent
 }];
 
