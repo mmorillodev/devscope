@@ -1,7 +1,7 @@
 mat-toolbar, mat-toolbar-row {
     background-color: #0C0D14;
     border-bottom: 1px solid #181C28;
-    justify-content: space-evenly;
+    justify-content: space-around;
     color: white;
 }
 
@@ -32,9 +32,11 @@ mat-toolbar, mat-toolbar-row {
 }
 
 .btn-wrapper {
-  width: 15vw;
+  width: 12vw;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);;
+  grid-template-columns: repeat(2, 1fr) .5fr;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-acct-manager {
@@ -46,6 +48,7 @@ mat-toolbar, mat-toolbar-row {
 
 .btn-login {
   background: #53A788;
+  margin-right: 5px;
   width: 4vw;
 }
 
