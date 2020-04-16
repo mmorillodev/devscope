@@ -1,7 +1,8 @@
 mat-toolbar, mat-toolbar-row {
     background-color: #0C0D14;
-    border-bottom: 1px solid #181C28;
-    justify-content: space-around;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    /*border-bottom: 1px solid #2b303d;*/
+    justify-content: flex-end;
     color: white;
 }
 
@@ -16,7 +17,15 @@ mat-toolbar, mat-toolbar-row {
 }
 
 .app-title {
-    /*margin-left: 15vw;*/
+    margin-right: 3.5vw;
+}
+
+.flex-box {
+  height: 100%;
+  width: 67%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .search-input {
@@ -32,11 +41,11 @@ mat-toolbar, mat-toolbar-row {
 }
 
 .btn-wrapper {
-  width: 12vw;
+  flex-grow: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr) .5fr;
-  justify-content: center;
-  align-items: center;
+  column-gap: 5px;
+  grid-template-columns: repeat(2, 1fr) .2fr;
+  justify-items: center;
 }
 
 .btn-acct-manager {

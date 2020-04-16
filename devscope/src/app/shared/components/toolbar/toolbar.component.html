@@ -1,7 +1,10 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <span class="app-title">DevScope</span>
-    <input class="search-input" placeholder="Search...">
+    <div class="flex-box">
+      <span class="app-title">DevScope</span>
+      <input class="search-input" placeholder="Search...">
+    </div>
+    <span class="fill-space"></span>
     <div class="btn-wrapper">
       <button class="btn-acct-manager btn-login">Entrar</button>
       <button class="btn-acct-manager btn-signup" [routerLink]="['register/new']">Inscreva-se</button>
