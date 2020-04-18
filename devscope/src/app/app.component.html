@@ -1,6 +1,2 @@
-<app-toolbar></app-toolbar>         
-<div class="row d-flex justify-content-center">
-    <div class="col-md-8">
-        <router-outlet></router-outlet>
-    </div>
-</div>
+<app-toolbar *ngIf="showMenu"></app-toolbar>
+<router-outlet></router-outlet>
