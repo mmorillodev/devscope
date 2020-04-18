@@ -1,10 +1,108 @@
-main-card {
-    position: absolute;
-    height: 50vh;
-    width: 50vw;
-    background: #1C1D1F;
-    border-radius: .25rem;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%);
+.main-card {
+  display: grid;
+  grid-template-columns: 0.35fr 1fr;
+  background: white;
+  height: 100%;
+  width: 100%;
+}
+
+.left-card {
+  display: flex;
+  flex-direction: column;
+  background: #0C0D14;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 65vh;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 7vh;
+}
+
+.logo {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  background: #C4C4C4;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+.app-title {
+  font-family: Roboto, SansSerif, serif;
+  font-size: 45px;
+}
+
+.login-form {
+  width: 100%;
+  padding: 30px;
+}
+
+.btn-login {
+  width: 100%;
+  background: #53A788;
+  color: white;
+  font-family: Roboto;
+}
+
+.complementary-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn-register {
+  width: 100%;
+  background: #23313D;
+  color: white;
+  font-family: Roboto;
+}
+
+.horizontal-line {
+  display: inline-block;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 1px solid #181C28;
+}
+
+.right-card {
+  background: #181C28;
+}
+
+label { font-family: Roboto, SansSerif, serif; }
+
+input {
+  background: #181C28;
+  color: white;
+  border: 0;
+  border-radius: .25rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+a {
+  color: #0085FF;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #0085FF;
 }
