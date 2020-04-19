@@ -53,6 +53,6 @@
     "typescript": "~3.7.5"
   },
   "engines": {
-    "node": "12.16.1"
+    "node": "12.16.x"
   }
 }
