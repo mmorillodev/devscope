@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   registerForm: FormGroup;
+  shouldShrink: boolean;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -23,4 +24,9 @@ export class LoginComponent implements OnInit {
 
   }
 
+  onResize(event) {
+    console.log('Current window width:', event.target.innerWidth);
+    console.log('Current window height:', event.target.innerHeight);
+    this.shouldShrink = event.target.innerWidth <= 415;
+  }
 }

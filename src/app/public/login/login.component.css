@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.single-card {
+  grid-template-columns: 1fr 0 !important;
+}
+
 .left-card {
   display: flex;
   flex-direction: column;
