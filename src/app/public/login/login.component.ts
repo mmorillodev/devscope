@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.onResize();
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -24,9 +25,10 @@ export class LoginComponent implements OnInit {
 
   }
 
-  onResize(event) {
-    console.log('Current window width:', event.target.innerWidth);
-    console.log('Current window height:', event.target.innerHeight);
-    this.shouldShrink = event.target.innerWidth <= 415;
+  onResize(event?) {
+    const target = event === undefined ? window : event.target;
+    console.log('Current window width:', target.innerWidth);
+    console.log('Current window height:', target.innerHeight);
+    this.shouldShrink = target.innerWidth <= 415;
   }
 }
