@@ -22,13 +22,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-
+    //TODO
   }
 
   onResize(event?) {
     const target = event === undefined ? window : event.target;
+
     console.log('Current window width:', target.innerWidth);
     console.log('Current window height:', target.innerHeight);
-    this.shouldShrink = target.innerWidth <= 415;
+
+    this.shouldShrink = target.innerWidth <= 870;
   }
 }

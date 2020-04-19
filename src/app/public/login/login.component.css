@@ -46,7 +46,7 @@
 
 .app-title {
   font-family: Roboto, SansSerif, serif;
-  font-size: 45px;
+  font-size: 4em;
 }
 
 .login-form {
@@ -58,7 +58,7 @@
   width: 100%;
   background: #53A788;
   color: white;
-  font-family: Roboto;
+  font-family: Roboto, SansSerif, serif;
 }
 
 .complementary-login {
@@ -76,7 +76,7 @@
   width: 100%;
   background: #23313D;
   color: white;
-  font-family: Roboto;
+  font-family: Roboto, SansSerif, serif;
 }
 
 .horizontal-line {
@@ -89,7 +89,16 @@
 }
 
 .right-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   background: #181C28;
+}
+
+.welcome {
+  font-family: Roboto, SansSerif, serif;
+  font-size: 4em;
 }
 
 label { font-family: Roboto, SansSerif, serif; }
