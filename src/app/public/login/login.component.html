@@ -26,7 +26,8 @@
       <button class="btn btn-register" [routerLink]="['/register']">Create an account</button>
     </div>
   </div>
-  <div class="right-card">
-
+  <div *ngIf="!shouldShrink" class="right-card">
+    <span class="welcome">Bem-vindo de volta!</span>
+    <app-bg-hardwork></app-bg-hardwork>
   </div>
 </div>
