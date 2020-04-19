@@ -1,4 +1,4 @@
-<div class="main-card">
+<div class="main-card" [className]="shouldShrink ? 'single-card' : ''" (window:resize)="onResize($event)">
   <div class="left-card">
     <div class="main-login">
       <div class="logo-wrapper">
