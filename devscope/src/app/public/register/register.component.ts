@@ -8,12 +8,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-    registerForm: FormGroup;
+    registerFirstForm: FormGroup;
+    secondFormOptions = [];
+    firstFormOptions = [];
 
-    constructor(private formBuilder: FormBuilder) {}
+    constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit() {
-        this.registerForm = this.formBuilder.group({
+
+        document.body.classList.add('body-wallpaper');
+
+        this.registerFirstForm = this.formBuilder.group({
             fullName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
             emailGroup: this.formBuilder.group({
                 email: ['', [Validators.required, Validators.email]],
@@ -25,9 +30,30 @@ export class RegisterComponent implements OnInit {
             cellphone: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
             address: ['', [Validators.required]]
         });
+
+        this.firstFormOptions = [
+            {
+                disabled: false,
+                expanded: true
+            }
+        ];
+
+        this.secondFormOptions = [
+            {
+                disabled: true,
+                expanded: false
+            }
+        ];
     }
 
-    register() {
-        console.log('Working');
+    firstFormRegister() {
+        this.firstFormOptions[0].disabled = true;
+        this.firstFormOptions[0].expanded = false;
+        this.secondFormOptions[0].disabled = false;
+        this.secondFormOptions[0].expanded = true;
+    }
+
+    secondFormRegister() {
+
     }
 }

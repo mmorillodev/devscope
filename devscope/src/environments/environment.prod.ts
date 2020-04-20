@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  heroku: 'https://devscope-server.herokuapp.com/api/v1'
 };

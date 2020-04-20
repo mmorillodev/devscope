@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RegisterComponent } from './register.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
     declarations: [
@@ -9,10 +10,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ],
     imports: [
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatExpansionModule
     ],
     exports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatExpansionModule
     ],
     bootstrap: [RegisterComponent]
 })

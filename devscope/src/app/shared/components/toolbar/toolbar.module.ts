@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { RouterModule } from '@angular/router';
         MatMenuModule,
         MatIconModule,
         FontAwesomeModule,
-        RouterModule
+        RouterModule,
+        CoreModule
     ],
     exports: [
         ToolbarComponent,
