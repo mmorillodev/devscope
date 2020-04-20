@@ -9,10 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   registerForm: FormGroup;
+  shouldShrink: boolean;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.onResize();
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -20,7 +22,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-
+    //TODO
   }
 
+  onResize(event?) {
+    const target = event === undefined ? window : event.target;
+
+    console.log('Current window width:', target.innerWidth);
+    console.log('Current window height:', target.innerHeight);
+
+    this.shouldShrink = target.innerWidth <= 870;
+  }
 }

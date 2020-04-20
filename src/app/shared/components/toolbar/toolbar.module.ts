@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ToolbarComponent } from './toolbar.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -10,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from '../../../core/core.module';
+import { ToolbarComponent } from './toolbar.component';
 
 @NgModule({
     declarations: [
