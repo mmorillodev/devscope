@@ -12,7 +12,7 @@ export class ToolbarComponent implements OnInit{
 
   constructor(
     private service: QuestionService
-  ){}
+  ) {}
 
   ngOnInit(): void {
     const question = this.service.getQuestionById(3).subscribe(
