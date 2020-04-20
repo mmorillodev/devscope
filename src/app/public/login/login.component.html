@@ -7,23 +7,23 @@
       </div>
       <form class="login-form" novalidate (ngSubmit)="login()" [formGroup]="registerForm">
         <div class="form-group">
-          <label for="email">Email or username</label>
+          <label for="email">Nome de usuário ou E-mail</label>
           <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" [ngClass]="{'is-invalid': (registerForm.get('email').touched || registerForm.get('email').dirty) && !registerForm.get('email').valid }">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Senha</label>
           <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{'is-invalid': (registerForm.get('password').touched || registerForm.get('password').dirty) && !registerForm.get('password').valid }" >
         </div>
         <div class="form-group">
           <label for="btnLogin">&nbsp;</label>
-          <button type="submit" class="btn btn-login" id="btnLogin" [disabled]="!registerForm.valid">Sign in</button>
+          <button type="submit" class="btn btn-login" id="btnLogin" [disabled]="!registerForm.valid">Entrar</button>
         </div>
       </form>
     </div>
     <div class="complementary-login">
-      <a>Forgot password?</a>
+      <a>Esqueceu a senha?</a>
       <div class="horizontal-line"></div>
-      <button class="btn btn-register" [routerLink]="['/register']">Create an account</button>
+      <button class="btn btn-register" [routerLink]="['/register']">Inscreva-se</button>
     </div>
   </div>
   <div *ngIf="!shouldShrink" class="right-card">
