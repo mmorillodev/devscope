@@ -15,9 +15,6 @@ export class RegisterComponent implements OnInit {
     constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit() {
-
-        document.body.classList.add('body-wallpaper');
-
         this.registerFirstForm = this.formBuilder.group({
             fullName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
             emailGroup: this.formBuilder.group({
