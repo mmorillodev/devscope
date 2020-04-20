@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from '../../../core/core.module';
 import { ToolbarComponent } from './toolbar.component';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ToolbarComponent } from './toolbar.component';
         MatMenuModule,
         MatIconModule,
         FontAwesomeModule,
-        RouterModule
+        RouterModule,
+        CoreModule
     ],
     exports: [
         ToolbarComponent,

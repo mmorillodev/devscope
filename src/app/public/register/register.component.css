@@ -1,4 +1,62 @@
-button {
-    float: right;
-    margin-top: 1vh;
-}
+.app-title {
+    font-family: Roboto, SansSerif, serif;
+    font-size: 45px;
+  }
+
+  
+  .logo {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    background: #C4C4C4;
+    border-radius: 100%;
+    margin-right: 15px;
+  }
+
+  .vertical-align {
+    height: 90%;
+  }
+
+  .mat-expansion-panel {
+      background-color: #0C0D14;      
+  }
+
+  .body-wallpaper {    
+    background: url(../../../assets/wallpapers/register.jpg) no-repeat center center fixed;    
+  }
+
+  .btn-success {    
+    background: #53A788;
+    color: white;
+    font-family: Roboto;    
+  }
+  
+  .mat-expansion-panel-header {
+    height: 500px;
+  }
+  
+  .mat-expansion-panel {
+      margin-bottom: 2vh;
+      color: white;
+  }
+
+  .mat-expansion-panel-header[aria-disabled=true], .mat-expansion-panel-header-title {
+    color: white;        
+  }
+
+  hr {
+    background-color: white;
+  }
+
+  input, select, select.options{
+    background: #181C28;
+    color: white;
+    border: 0;
+    border-radius: .25rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  option {
+    background-color: #181C28;
+    color: white;
+  }  
