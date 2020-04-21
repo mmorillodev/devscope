@@ -45,8 +45,14 @@
 }
 
 .app-title {
+  color: white;
   font-family: Roboto, SansSerif, serif;
   font-size: 4em;
+}
+
+.app-title:hover {
+  color: lightgray;
+  text-decoration: none;
 }
 
 .login-form {
