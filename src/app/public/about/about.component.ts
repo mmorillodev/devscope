@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  public window: Window;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.window = window;
   }
 
+  onscroll() {
+
+  }
+
+  onresize() {
+
+  }
+
+  scroll(id: string) {
+    const element: Element = document.getElementById(id);
+    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+  }
 }

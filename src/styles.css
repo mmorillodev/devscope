@@ -8,3 +8,8 @@ body {
   background-color: #181C28;
   color: white;
 }
+
+@font-face {
+  font-family: Amiko;
+  src: url("assets/font/amiko/Amiko-Regular.ttf");
+}
