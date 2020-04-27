@@ -1,22 +1,14 @@
 import { NgModule } from '@angular/core';
 import { AboutComponent } from './about.component';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterModule } from '@angular/router';
-import { BgHardworkModule } from '../../shared/components/bg-hardwork/bg-hardwork.module';
+import {BongoCatModule} from '../../shared/components/bongo-cat/bongo-cat.module';
+import {AboutFloatingCardModule} from '../../shared/components/about-floating-card/about-floating-card.module';
 
 @NgModule({
   declarations: [
     AboutComponent
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    BgHardworkModule,
-    RouterModule
-  ],
-  exports: [ReactiveFormsModule, FontAwesomeModule],
+  imports: [BongoCatModule, AboutFloatingCardModule],
+  exports: [],
   bootstrap: [AboutComponent]
 })
 export class AboutModule {}

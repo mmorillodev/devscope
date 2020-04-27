@@ -7,13 +7,6 @@ main {
   scroll-behavior: smooth;
 }
 
-.circle {
-  border-radius: 100%;
-  background: #181C28;
-  height: 6.875em;
-  width: 6.875em;
-}
-
 .padded-container {
   padding: 20px;
 }
@@ -153,20 +146,6 @@ main {
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
-}
-
-.floating-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 23.750em;
-  height: 28em;
-  padding: 3em;
-  background: #0C0D14;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  border-radius: .25rem;
 }
 
 .line-break {
