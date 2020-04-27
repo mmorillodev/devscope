@@ -11,35 +11,44 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
-          <mat-expansion-panel hideToggle="true" [expanded]="firstFormOptions[0].expanded"
-            [disabled]="firstFormOptions[0].disabled">
+          <mat-expansion-panel hideToggle="true" [expanded]="firstFormOptions[0].expanded" >
 
-            <mat-expansion-panel-header>
+            <mat-expansion-panel-header [collapsedHeight]="'15vh'">
               <mat-panel-title>
-                1. Dados pessoais
+                <div class="row pl-3 align-items-center w-100">
+                  <div class="circle">
+                    1
+                  </div>
+                  Dados Pessoais
+                </div>
               </mat-panel-title>
             </mat-expansion-panel-header>
 
             <div class="row">
               <div class="col-md-8 col-xs-12">
 
-            <hr class="mt-0" />
+                <hr class="mt-0" />
 
                 <form novalidate (ngSubmit)="firstFormRegister()" [formGroup]="registerFirstForm">
-                  <div class="row mb-4">
+                  <div class="row pb-4">
                     <div class="col-md-8">
                       <div class="form group">
                         <label class="col-form-label" for="fullNameId">Nome Completo</label>
                         <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
                           [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+                          <span class="invalid-feedback position-absolute">
+                            <span *ngIf="registerFirstForm.get('fullName').errors?.required">
+                              Favor inserir o seu nome completo.
+                            </span>
+                          </span>
                       </div>
                     </div>
 
                     <div class="col-md-4">
                       <div class="form group">
-                        <label class="col-form-label" for="sexId">Sexo</label>
-                        <select class="form-control" id="sexId" formControlName="fullName"
-                          [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }">
+                        <label class="col-form-label" for="genreId">Sexo</label>
+                        <select class="form-control" id="genreId" formControlName="genre"
+                          [ngClass]="{'is-invalid': (registerFirstForm.get('genre').touched || registerFirstForm.get('genre').dirty) && !registerFirstForm.get('genre').valid }">
                           <option>Masculino</option>
                           <option>Feminino</option>
                         </select>
@@ -47,13 +56,13 @@
                     </div>
                   </div>
 
-                  <div class="row mb-4">
+                  <div class="row pb-4">
                     <div class="col-md-4">
                       <div class="form group">
                         <label class="col-form-label" for="birthDateId">Data de Nascimento</label>
                         <input class="form-control" id="birthDateId" type="text" formControlName="birthDate"
                           [ngClass]="{'is-invalid': (registerFirstForm.get('birthDate').touched || registerFirstForm.get('birthDate').dirty) && !registerFirstForm.get('birthDate').valid }" />
-                        <span class="invalid-feedback">
+                        <span class="invalid-feedback position-absolute">
                           <span *ngIf="registerFirstForm.get('birthDate').errors?.required">
                             Favor inserir a sua data de nascimento.
                           </span>
@@ -64,18 +73,15 @@
                     <div class="col-md-4">
                       <div class="form group">
                         <label class="col-form-label" for="telephoneId">Telefone</label>
-                        <input class="form-control" id="telephoneId" type="text" formControlName="telephone"
+                        <input class="form-control" id="telephoneId" type="tel" formControlName="telephone"
                           [ngClass]="{'is-invalid': (registerFirstForm.get('telephone').touched || registerFirstForm.get('telephone').dirty) && !registerFirstForm.get('telephone').valid }" />
-                        <span class="invalid-feedback">
+                        <span class="invalid-feedback position-absolute">
                           <span *ngIf="registerFirstForm.get('telephone').errors?.required">
                             Favor digitar o seu número de telefone.
                           </span>
-                          <span *ngIf="registerFirstForm.get('telephone').errors?.minlength">
+                          <span *ngIf="registerFirstForm.get('telephone').errors?.minlength || registerFirstForm.get('telephone').errors?.maxlength">
                             Favor digitar um telefone válido.
-                          </span>
-                          <span *ngIf="registerFirstForm.get('telephone').errors?.maxlength">
-                            Favor digitar um telefone válido.
-                          </span>
+                          </span>                          
                         </span>
                       </div>
                     </div>
@@ -83,37 +89,44 @@
                     <div class="col-md-4">
                       <div class="form group">
                         <label class="col-form-label" for="cellphoneId">Celular</label>
-                        <input class="form-control" id="cellphoneId" type="text" formControlName="cellphone"
+                        <input class="form-control" id="cellphoneId" type="tel" formControlName="cellphone"
                           [ngClass]="{'is-invalid': (registerFirstForm.get('cellphone').touched || registerFirstForm.get('cellphone').dirty) && !registerFirstForm.get('cellphone').valid }" />
-                        <span class="invalid-feedback">
+                        <span class="invalid-feedback position-absolute">
                           <span *ngIf="registerFirstForm.get('cellphone').errors?.required">
                             Favor digitar o seu número de celular.
                           </span>
-                          <span *ngIf="registerFirstForm.get('cellphone').errors?.minlength">
+                          <span *ngIf="registerFirstForm.get('cellphone').errors?.minlength || registerFirstForm.get('cellphone').errors?.maxlength">
                             Favor digitar um celular válido.
-                          </span>
-                          <span *ngIf="registerFirstForm.get('cellphone').errors?.maxlength">
-                            Favor digitar um celular válido.
-                          </span>
+                          </span>                          
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <div class="row mb-4">
+                  <div class="row pb-4">
                     <div class="col-md-8">
                       <div class="form group">
-                        <label class="col-form-label" for="fullNameId">Rua</label>
-                        <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                          [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+                        <label class="col-form-label" for="addressId">Endereço</label>
+                        <input class="form-control" id="addressId" type="text" formControlName="address"
+                          [ngClass]="{'is-invalid': (registerFirstForm.get('address').touched || registerFirstForm.get('address').dirty) && !registerFirstForm.get('address').valid }" />
+                          <span class="invalid-feedback position-absolute">
+                            <span *ngIf="registerFirstForm.get('address').errors?.required">
+                              Favor inserir o seu endereço.
+                            </span>
+                          </span>
                       </div>
                     </div>
 
                     <div class="col-md-4">
                       <div class="form group">
-                        <label class="col-form-label" for="fullNameId">CEP</label>
-                        <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                          [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+                        <label class="col-form-label" for="cepId">CEP</label>
+                        <input class="form-control" id="cepId" type="text" formControlName="cep"
+                          [ngClass]="{'is-invalid': (registerFirstForm.get('cep').touched || registerFirstForm.get('cep').dirty) && !registerFirstForm.get('cep').valid }" />
+                          <span class="invalid-feedback position-absolute">
+                            <span *ngIf="registerFirstForm.get('cep').errors?.required">
+                              Favor inserir o seu cep.
+                            </span>
+                          </span>
                       </div>
                     </div>
                   </div>
@@ -121,43 +134,58 @@
                   <div class="row mb-4">
                     <div class="col-md-2">
                       <div class="form group">
-                        <label class="col-form-label" for="fullNameId">Número</label>
-                        <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                          [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+                        <label class="col-form-label" for="addressNumberId">Número</label>
+                        <input class="form-control" id="addressNumberId" type="text" formControlName="addressNumber"
+                          [ngClass]="{'is-invalid': (registerFirstForm.get('addressNumber').touched || registerFirstForm.get('addressNumber').dirty) && !registerFirstForm.get('addressNumber').valid }" />
                       </div>
+                      <span class="invalid-feedback position-absolute">
+                        <span *ngIf="registerFirstForm.get('addressNumber').errors?.required">
+                          Favor inserir o número da sua residência.
+                        </span>
+                      </span>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form group">
-                        <label class="col-form-label" for="fullNameId">Estado</label>
-                        <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                          [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+                        <label class="col-form-label" for="stateId">Estado</label>
+                        <input class="form-control" id="stateId" type="text" formControlName="state"
+                          [ngClass]="{'is-invalid': (registerFirstForm.get('state').touched || registerFirstForm.get('state').dirty) && !registerFirstForm.get('state').valid }" />
+                          <span class="invalid-feedback position-absolute">
+                            <span *ngIf="registerFirstForm.get('state').errors?.required">
+                              Favor inserir o estado na qual reside.
+                            </span>
+                          </span>
                       </div>
                     </div>
 
 
                     <div class="col-md-4">
                       <div class="form group">
-                        <label class="col-form-label" for="fullNameId">Cidade</label>
-                        <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                          [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+                        <label class="col-form-label" for="cityId">Cidade</label>
+                        <input class="form-control" id="cityId" type="text" formControlName="city"
+                          [ngClass]="{'is-invalid': (registerFirstForm.get('city').touched || registerFirstForm.get('city').dirty) && !registerFirstForm.get('city').valid }" />
+                          <span class="invalid-feedback position-absolute">
+                            <span *ngIf="registerFirstForm.get('state').errors?.required">
+                              Favor inserir a cidade na qual reside.
+                            </span>
+                          </span>
                       </div>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col-md-12">
-                      <button class="btn btn-success mt-5 float-right">
+                      <button class="btn btn-success mt-4 mb-4 float-right">
                         Próximo
                       </button>
                     </div>
                   </div>
                 </form>
               </div>
-              <div class="col-md-4 hidden-xs-down">
+              <div class="col-md-4 d-none d-sm-block">
                 <div class="row h-50 align-items-center">
                   <div class="col-md-12 text-center">
-                    <div class="display-4">Bem Vindo!</div>                    
+                    <div class="display-4">Bem Vindo!</div>
                   </div>
                 </div>
                 <div class="row h-50">
@@ -176,54 +204,110 @@
         <div class="col-md-12">
           <mat-expansion-panel hideToggle="true" [expanded]="secondFormOptions[0].expanded"
             [disabled]="secondFormOptions[0].disabled">
-            <mat-expansion-panel-header>
+            <mat-expansion-panel-header [collapsedHeight]="'15vh'">
               <mat-panel-title>
-                2. Email e senha
+                <div class="row pl-3 align-items-center w-100">
+                  <div class="circle">
+                    2
+                  </div>
+                  Email e Senha
+                </div>
               </mat-panel-title>
             </mat-expansion-panel-header>
 
             <hr class="mt-0" />
 
-            <form novalidate (ngSubmit)="secondFormRegister()" [formGroup]="registerFirstForm">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form group">
-                    <label class="col-form-label" for="fullNameId">Email</label>
-                    <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                      [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+            <form novalidate (ngSubmit)="secondFormRegister()" [formGroup]="registerSecondForm">
+              <div formGroupName="emailGroup">
+                <div class="row pb-4">
+                  <div class="col-md-6">
+                    <div class="form group">
+                      <label class="col-form-label" for="emailId">Email</label>
+                      <input class="form-control" 
+                             id="emailId"
+                             type="text"
+                             formControlName="email"                             
+                             [ngClass]="{'is-invalid': registerSecondForm.get('emailGroup').errors ||
+                                                       (registerSecondForm.get('emailGroup.email').touched ||
+                                                       registerSecondForm.get('emailGroup.email').dirty) && 
+                                                       !registerSecondForm.get('emailGroup.email').valid }" />
+                        <span class="invalid-feedback position-absolute">
+                          <span *ngIf="registerSecondForm.get('emailGroup.email').errors?.required">
+                            Favor inserir o seu endereço de email.
+                          </span>
+                          <span *ngIf="registerSecondForm.get('emailGroup.email').errors?.email">
+                            Favor digitar um endereço de email válido.
+                          </span>
+                        </span>                                                       
+                    </div>
                   </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form group">
-                    <label class="col-form-label" for="fullNameId">Confirmação de email</label>
-                    <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                      [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+  
+                  <div class="col-md-6">
+                    <div class="form group">
+                      <label class="col-form-label" for="ConfirmEmailId">Confirmação de email</label>
+                      <input class="form-control" id="ConfirmEmailId" type="text" formControlName="confirmEmail"
+                        [ngClass]="{'is-invalid': registerSecondForm.get('emailGroup').errors ||
+                                                  ((registerSecondForm.get('emailGroup.confirmEmail').touched ||
+                                                   registerSecondForm.get('emailGroup.confirmEmail').dirty) &&
+                                                   !registerSecondForm.get('emailGroup.confirmEmail').valid) }" />
+                        <span class="invalid-feedback position-absolute">
+                          <span *ngIf="registerSecondForm.get('emailGroup.confirmEmail').errors?.required">
+                            Favor confirmar o seu endereço de email.
+                          </span>
+                          <span *ngIf="registerSecondForm.get('emailGroup.confirmEmail').errors?.email">
+                            Favor digitar um endereço de email válido.
+                          </span>
+                          <span *ngIf="registerSecondForm.get('emailGroup').errors?.match">
+                            Os emails devem ser idênticos.
+                          </span>
+                        </span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form group">
-                    <label class="col-form-label" for="fullNameId">Senha</label>
-                    <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                      [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+              <div formGroupName="passwordGroup">
+                <div class="row pb-4">
+                  <div class="col-md-6">
+                    <div class="form group">
+                      <label class="col-form-label" for="passwordId">Senha</label>
+                      <input class="form-control" id="passwordId" type="password" formControlName="password"
+                        [ngClass]="{'is-invalid': registerSecondForm.get('passwordGroup').errors ||
+                                                  ((registerSecondForm.get('passwordGroup.password').touched || 
+                                                  registerSecondForm.get('passwordGroup.password').dirty) &&
+                                                  !registerSecondForm.get('passwordGroup.password').valid) }" />
+                      <span class="invalid-feedback position-absolute">
+                        <span *ngIf="registerSecondForm.get('passwordGroup.password').errors?.required">
+                          Favor inserir uma senha.
+                        </span>
+                      </span>
+                    </div>
                   </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form group">
-                    <label class="col-form-label" for="fullNameId">Confirmação de senha</label>
-                    <input class="form-control" id="fullNameId" type="text" formControlName="fullName"
-                      [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
+  
+                  <div class="col-md-6">
+                    <div class="form group">
+                      <label class="col-form-label" for="confirmPasswordId">Confirmação de senha</label>
+                      <input class="form-control" id="confirmPasswordId" type="password" formControlName="confirmPassword"
+                        [ngClass]="{'is-invalid': registerSecondForm.get('passwordGroup').errors ||
+                                                   ((registerSecondForm.get('passwordGroup.confirmPassword').touched ||
+                                                   registerSecondForm.get('passwordGroup.confirmPassword').dirty) &&
+                                                   !registerSecondForm.get('fullName').valid) }" />
+                        <span class="invalid-feedback position-absolute">
+                          <span *ngIf="registerSecondForm.get('passwordGroup.confirmPassword').errors?.required">
+                            Favor confirmar uma senha.
+                          </span>
+                          <span *ngIf="registerSecondForm.get('passwordGroup').errors?.match">
+                            As senhas devem ser idênticas.
+                          </span>
+                        </span>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12">
-                  <button class="btn btn-success mt-5 float-right">
+                  <button class="btn btn-success mt-4 mb-4 float-right">
                     Salvar
                   </button>
                 </div>
@@ -237,165 +321,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- 
-  <div class="form-group row mb-2">
-    <label class="col-md-2 col-form-label" for="fullNameId">Nome Completo</label>
-    <div class="col-md-8">
-      <input class="form-control" id="fullNameId" type="text" placeholder="Nome completo (obrigatório)"
-        formControlName="fullName"
-        [ngClass]="{'is-invalid': (registerFirstForm.get('fullName').touched || registerFirstForm.get('fullName').dirty) && !registerFirstForm.get('fullName').valid }" />
-      <span class="invalid-feedback">
-        <span *ngIf="registerFirstForm.get('fullName').errors?.required">
-          Favor digitar o seu nome completo.
-        </span>
-        <span *ngIf="registerFirstForm.get('fullName').errors?.minlength">
-          O seu nome deve ter no mínimo 3 caracteres.
-        </span>
-        <span *ngIf="registerFirstForm.get('fullName').errors?.maxlength">
-          O seu nome deve ter no máximo 200 caracteres.
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div class="form-group row mb-2">
-    <label class="col-md-2 col-form-label" for="birthDateId">Data de Nascimento</label>
-    <div class="col-md-8">
-      <input class="form-control" id="birthDateId" type="date" placeholder="Data de nascimento (obrigatório)"
-        formControlName="birthDate"
-        [ngClass]="{'is-invalid': (registerFirstForm.get('birthDate').touched || registerFirstForm.get('birthDate').dirty) && !registerFirstForm.get('birthDate').valid }" />
-      <span class="invalid-feedback">
-        <span *ngIf="registerFirstForm.get('birthDate').errors?.required">
-          Favor inserir a sua data de nascimento.
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div class="form-group row mb-2">
-    <label class="col-md-2 col-form-label" for="telephoneId">Telefone</label>
-    <div class="col-md-8">
-      <input class="form-control" id="telephoneId" type="text" placeholder="Telefone (obrigatório)"
-        formControlName="telephone"
-        [ngClass]="{'is-invalid': (registerFirstForm.get('telephone').touched || registerFirstForm.get('telephone').dirty) && !registerFirstForm.get('telephone').valid }" />
-      <span class="invalid-feedback">
-        <span *ngIf="registerFirstForm.get('telephone').errors?.required">
-          Favor digitar o seu número de telefone.
-        </span>
-        <span *ngIf="registerFirstForm.get('telephone').errors?.minlength">
-          Favor digitar um telefone válido.
-        </span>
-        <span *ngIf="registerFirstForm.get('telephone').errors?.maxlength">
-          Favor digitar um telefone válido.
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div class="form-group row mb-2">
-    <label class="col-md-2 col-form-label" for="cellphoneId">Celular</label>
-    <div class="col-md-8">
-      <input class="form-control" id="cellphoneId" type="text" placeholder="Celular (obrigatório)"
-        formControlName="cellphone"
-        [ngClass]="{'is-invalid': (registerFirstForm.get('cellphone').touched || registerFirstForm.get('cellphone').dirty) && !registerFirstForm.get('cellphone').valid }" />
-      <span class="invalid-feedback">
-        <span *ngIf="registerFirstForm.get('cellphone').errors?.required">
-          Favor digitar o seu número de celular.
-        </span>
-        <span *ngIf="registerFirstForm.get('cellphone').errors?.minlength">
-          Favor digitar um celular válido.
-        </span>
-        <span *ngIf="registerFirstForm.get('cellphone').errors?.maxlength">
-          Favor digitar um celular válido.
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div class="form-group row mb-2">
-    <label class="col-md-2 col-form-label" for="addressId">Endreceço</label>
-    <div class="col-md-8">
-      <input class="form-control" id="addressId" type="text" placeholder="Endereço (obrigatório)"
-        formControlName="address"
-        [ngClass]="{'is-invalid': (registerFirstForm.get('address').touched || registerFirstForm.get('address').dirty) && !registerFirstForm.get('address').valid }" />
-      <span class="invalid-feedback">
-        <span *ngIf="registerFirstForm.get('address').errors?.required">
-          Favor digitar o seu endereço.
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div formGroupName="emailGroup">
-    <div class="form-group row mb-2">
-      <label class="col-md-2 col-form-label" for="emailId">Email</label>
-      <div class="col-md-8">
-        <input class="form-control" id="emailId" type="text" placeholder="Email (obrigatório)" formControlName="email"
-          [ngClass]="{'is-invalid': (registerFirstForm.get('emailGroup.email').touched || registerFirstForm.get('emailGroup.email').dirty) && !registerFirstForm.get('emailGroup.email').valid }" />
-        <span class="invalid-feedback">
-          <span *ngIf="registerFirstForm.get('emailGroup.email').errors?.required">
-            Favor digitar o seu email.
-          </span>
-          <span *ngIf="registerFirstForm.get('emailGroup.email').errors?.valid">
-            Favor digitar um endereço de email válido.
-          </span>
-        </span>
-      </div>
-    </div>
-
-    <div class="form-group row mb-2">
-      <label class="col-md-2 col-form-label" for="emailId">Confirmação de Email</label>
-      <div class="col-md-8">
-        <input class="form-control" id="confirmEmailId" type="text" placeholder="Confirmação de email (obrigatório)"
-          formControlName="confirmEmail"
-          [ngClass]="{'is-invalid': (registerFirstForm.get('emailGroup.confirmEmail').touched || 
-                                            registerFirstForm.get('emailGroup.confirmEmail').dirty) &&
-                                            !registerFirstForm.get('emailGroup.confirmEmail').valid &&
-                                            registerFirstForm.get('emailGroup.confirmEmail').value !== registerFirstForm.get('emailGroup.email')}" />
-        <span class="invalid-feedback">
-          <span *ngIf="registerFirstForm.get('emailGroup.confirmEmail').errors?.required">
-            Favor digitar o seu email.
-          </span>
-          <span *ngIf="registerFirstForm.get('emailGroup.confirmEmail').errors?.email">
-            Favor confirme o seu email.
-          </span>
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group row mb-2">
-    <label class="col-md-2 col-form-label" for="passwordId">Senha</label>
-    <div class="col-md-8">
-      <input class="form-control" id="passwordId" type="password" placeholder="Senha (obrigatório)"
-        formControlName="password"
-        [ngClass]="{'is-invalid': (registerFirstForm.get('password').touched || registerFirstForm.get('password').dirty) && !registerFirstForm.get('password').valid }" />
-      <span class="invalid-feedback">
-        <span *ngIf="registerFirstForm.get('password').errors?.required">
-          Favor digitar a sua senha.
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div class="form-group row mb-2">
-    <div class="offset-md-2 col-md-8">
-      <button class="btn btn-primary ml-1" type="submit"
-        [title]="registerFirstForm.valid ? 'Salve o seu cadastro!' : 'Desabilitado até que os dados sejam válidos'"
-        [disabled]="!registerFirstForm.valid">
-        Salvar
-      </button>
-      <button class="btn btn-danger mr-1">
-        Cancelar
-      </button>
-    </div>
-  </div>
-</form>
-
-<br>Dirty: {{ registerFirstForm.dirty }}
-<br>Touched: {{ registerFirstForm.touched }}
-<br>Valid: {{ registerFirstForm.valid }}
-<br>Value: {{ registerFirstForm.value | json }}
-<br>password: {{registerFirstForm.get('password').value}} -->
