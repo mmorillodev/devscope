@@ -139,7 +139,7 @@ main {
   width: 100%;
 }
 
-.floating-card-wrapper {
+.grid-layout {
   display: grid;
   height: 100%;
   width: 100%;
