@@ -1,0 +1,153 @@
+.home {
+    height: fit-content;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Amiko;
+}
+
+.texts:first-of-type {
+    height: 35vh;
+    justify-content: space-between;
+}
+
+.horizontal-line {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    border: 0;
+    border-top: 1px solid #0C0D14;
+}
+
+.chat-layer1 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    min-height: 80vh;
+    border-radius: 1.25rem;
+    background: white;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.outer-cam {
+    display: flex;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #111;
+    align-items: center;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.inner-cam {
+    height: 15px;
+    width: 15px;
+    background: #999;
+    border-radius: 50%;
+}
+
+.reflection {
+    background-color: white;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    right: calc(50% - 6px);
+}
+
+.chat-layer2 {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: -webkit-fill-available;
+    border-radius: 1.25rem;
+    background: #0C0D14;
+    margin-bottom: 20px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.picture {
+    border-radius: 50%;
+    background: black;
+    margin-right: 1vw;
+    height: 25px;
+    width: 25px;
+}
+
+.user-name {
+    
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    background: #181C28;
+    border-radius: .75rem;
+    margin-bottom: 20px;
+    max-width: 50%;
+    padding: 15px;
+    text-align: justify;
+}
+
+.message.sent {
+    align-self: flex-end;
+}
+
+.message.received {
+    align-self: flex-start;
+}
+
+.input-message {
+    background: #181C28;
+    border-radius: 1.25rem;
+    width: 100%;
+    padding: 10px;
+    border: 0px;
+    margin-right: 5px;
+}
+
+.send {
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+}
+
+.input-message[value] {
+    color: white;
+}
+
+.btn-send {
+    width: 35px;
+    height: 35px;
+    background: #53A788;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+}

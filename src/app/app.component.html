@@ -1,2 +1,89 @@
 <app-toolbar *ngIf="router.url === '/'"></app-toolbar>
+
+<div *ngIf="router.url === '/'" class="home">
+    <div class="texts">
+        <h1>"Porque a Devscope?"</h1>
+        <h2>Realmente existem milhares de redes sociais com milhões de usuários, porém nehuma delas é como a gente.</h2>
+        <h1>Pois nosso foco é você, Dev!</h1>
+    </div>
+    
+    <div class="horizontal-line"></div>
+
+    <div class="chat-layer1">
+        <div class="outer-cam">
+            <div class="inner-cam"></div>
+            <div class="reflection"></div>
+        </div>
+        <div class="chat-layer2">
+            <div class="chat">
+                <div class="message received">
+                    <div class="user-info">
+                        <div class="picture"></div>
+                        <div class="user-name">James Apherson</div>
+                    </div>
+                    <p>Bom dia, pessoal.<br>
+                        Eu sou novo em Python e me esqueci como se declara um array.  Alguém poderia me dar uma luz?
+                    </p>
+                </div>
+                <div class="message sent">
+                    <div class="user-info">
+                        <div class="picture"></div>
+                        <div class="user-name">Henry Calvo</div>
+                    </div>
+                    <p>
+                        Bom dia, James. Sejam bem vindo.<br>
+                        Em Python não existe arrays e sim listas, já que são dinâmicas você não precisa definir um tamanho para elas nem o tipo.<br>
+                        <br>
+                        Ex: lista = []<br>
+                        <br>
+                        Depois você só precisa inserir dados na lista. Recomendo usar o método append, que sempre irá colocar dados no último index da lista.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="send">
+                <input type="text" placeholder="Digite aqui..." class="input-message" disabled>
+                <div class="btn-send"><span>></span></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="texts" style="margin-bottom: 4em;">
+        <h1>Pessoas inspirando pessoas</h1>
+        <h2>Utilizando  a comunicação informal e fluída, deixando os programadores mais confortáveis para transmitir suas idéias</h2>
+    </div>
+
+    <div class="chat-layer1">
+        <div class="outer-cam">
+            <div class="inner-cam"></div>
+            <div class="reflection"></div>
+        </div>
+        <div class="chat-layer2">
+            <div class="chat">
+                <div class="message received">
+                    <div class="user-info">
+                        <div class="picture"></div>
+                        <div class="user-name">Devscope</div>
+                    </div>
+                    <p>Programadores perguntam</p>
+                </div>
+                <div class="message sent">
+                    <div class="user-info">
+                        <div class="picture"></div>
+                        <div class="user-name">Devscope</div>
+                    </div>
+                    <p>Programadores respondem</p>
+                </div>
+            </div>
+            
+            <div class="send">
+                <input type="text" placeholder="Digite aqui..." class="input-message" value="Simples assim" disabled>
+                <div class="btn-send"><span>></span></div>
+            </div>
+        </div>
+    </div>
+</div>
 <router-outlet></router-outlet>
