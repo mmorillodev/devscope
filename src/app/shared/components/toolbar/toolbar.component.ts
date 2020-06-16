@@ -9,12 +9,14 @@ import { QuestionService } from 'src/app/core/api-service/question/question.serv
 export class ToolbarComponent implements OnInit{
 
   questionx: any;
+  screenWidth: number;
 
   constructor(
     private service: QuestionService
   ) {}
 
   ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
     const question = this.service.getQuestionById(3).subscribe(
       questionResponse => {
         console.log(questionResponse);
@@ -23,4 +25,8 @@ export class ToolbarComponent implements OnInit{
 
     console.log(this.questionx);
   }
+
+  onResize(event): void {
+    this.screenWidth = window.innerWidth;
+  };
 }
