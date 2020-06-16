@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar (window:resize)="onResize($event)">
   <mat-toolbar-row>
     <div class="flex-box">
       <span class="app-title">DevScope</span>
@@ -6,13 +6,21 @@
     </div>
     <span class="fill-space"></span>
     <div class="btn-wrapper">
-      <button class="btn-acct-manager btn-login" [routerLink]="['login']">Entrar</button>
-      <button class="btn-acct-manager btn-signup" [routerLink]="['register']">Inscreva-se</button>
+      <button *ngIf="screenWidth >= 620" class="btn-acct-manager btn-login" [routerLink]="['login']">Entrar</button>
+      <button *ngIf="screenWidth >= 620" class="btn-acct-manager btn-signup" [routerLink]="['register']">Inscreva-se</button>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Apps">
         <mat-icon>apps</mat-icon>
       </button>
       <i class="fas fa-th"></i>
       <mat-menu #menu="matMenu">
+        <button *ngIf="screenWidth < 620" mat-menu-item routerLink="login">
+          <mat-icon>account_box</mat-icon>
+          <span>Entrar</span>
+        </button>
+        <button *ngIf="screenWidth < 620" mat-menu-item routerLink="register">
+          <mat-icon>supervisor_account</mat-icon>
+          <span>Inscreva-se</span>
+        </button>
         <button mat-menu-item routerLink="about">
           <mat-icon>info</mat-icon>
           <span>Quem somos ?</span>
