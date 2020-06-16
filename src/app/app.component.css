@@ -108,7 +108,6 @@ h2 {
 }
 
 .chat-layer2 {
-    padding: 25px;
     display: flex;
     flex-direction: column;
     width: 95%;
@@ -121,6 +120,7 @@ h2 {
 .chat {
     display: flex;
     flex-direction: column;
+    padding: 3vw;
 }
 
 .user-info {
@@ -183,6 +183,7 @@ input {
     display: flex;
     margin-top: auto;
     align-items: center;
+    padding: 1vh 3vw 1vh 3vw;
 }
 
 input[value] {
@@ -214,6 +215,9 @@ input[value] {
 
     .chat-layer2 {
         max-height: 76vh;
+    }
+
+    .chat  {
         overflow: auto;
     }
 
